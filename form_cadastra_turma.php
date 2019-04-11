@@ -64,6 +64,6 @@
     
     <div id="rodape">
     </div>
-    </body>
+    </div>
 </body>
 </html>
