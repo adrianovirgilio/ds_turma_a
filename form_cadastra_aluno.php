@@ -1,4 +1,13 @@
-﻿<?php
+<!--
+ # Etec Tenente Aviador Gustavo Klug
+ # Curso: Informática Para Internet
+ # 3º Módulo -Turma B
+ # Disciplina: Desenvolvimento de Software II
+ # Competências: Analisar a orientação a objetos e sua aplicação em sistemas web; Integrar sistemas web com sistemas gerenciadores de banco de dados.
+ # Prof. Adriano Virgílio
+ # Data: 23/04/2019
+-->
+<?php
 	include("conecta.php");
 ?>
 <!doctype html>
