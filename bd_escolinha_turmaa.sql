@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 11-Abr-2019 às 01:13
+-- Data de Criação: 17-Maio-2019 às 00:05
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -30,21 +30,29 @@ USE `bd_escolinha_turmaa`;
 
 CREATE TABLE IF NOT EXISTS `tb_aluno` (
   `rm` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) COLLATE utf8_bin NOT NULL,
-  `foto` varchar(100) COLLATE utf8_bin NOT NULL,
-  `data_nasc` date NOT NULL,
-  `endereco` varchar(80) COLLATE utf8_bin NOT NULL,
-  `serie` int(11) NOT NULL,
-  `nome_pai` varchar(50) COLLATE utf8_bin NOT NULL,
-  `nome_mae` varchar(50) COLLATE utf8_bin NOT NULL,
-  `nome_responsavel` varchar(50) COLLATE utf8_bin NOT NULL,
-  `telefone` varchar(15) COLLATE utf8_bin NOT NULL,
-  `celular` varchar(15) COLLATE utf8_bin NOT NULL,
-  `escola` varchar(50) COLLATE utf8_bin NOT NULL,
-  `telefone_escola` varchar(15) COLLATE utf8_bin NOT NULL,
-  `id_time` int(11) NOT NULL,
+  `nome` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `foto` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `data_nasc` date DEFAULT NULL,
+  `endereco` int(5) DEFAULT NULL,
+  `serie` int(11) DEFAULT NULL,
+  `nome_pai` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `nome_mae` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `nome_responsavel` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `telefone` varchar(15) COLLATE utf8_bin DEFAULT NULL,
+  `celular` varchar(15) COLLATE utf8_bin DEFAULT NULL,
+  `escola` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `telefone_escola` varchar(15) COLLATE utf8_bin DEFAULT NULL,
+  `id_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`rm`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=8 ;
+
+--
+-- Extraindo dados da tabela `tb_aluno`
+--
+
+INSERT INTO `tb_aluno` (`rm`, `nome`, `foto`, `data_nasc`, `endereco`, `serie`, `nome_pai`, `nome_mae`, `nome_responsavel`, `telefone`, `celular`, `escola`, `telefone_escola`, `id_time`) VALUES
+(6, 'Adriano Aparecido VirgÃ­lio', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'Adriano Aparecido VirgÃ­lio', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -71,6 +79,27 @@ CREATE TABLE IF NOT EXISTS `tb_campeonato` (
   `ano` varchar(4) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_campeonato`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_endereco`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_endereco` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rm` int(5) DEFAULT NULL,
+  `rua` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+
+--
+-- Extraindo dados da tabela `tb_endereco`
+--
+
+INSERT INTO `tb_endereco` (`id`, `rm`, `rua`) VALUES
+(5, 6, 'Rua das Flores'),
+(6, 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -116,7 +145,14 @@ CREATE TABLE IF NOT EXISTS `tb_professor` (
   `telefone` varchar(15) COLLATE utf8_bin NOT NULL,
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_professor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `tb_professor`
+--
+
+INSERT INTO `tb_professor` (`id_professor`, `login`, `senha`, `nome`, `telefone`, `email`) VALUES
+(1, 'adriano', '123', 'Adriano Virgílio', '(19)99638-4745', 'adriano.virgilio@etec.sp.gov.br');
 
 -- --------------------------------------------------------
 
