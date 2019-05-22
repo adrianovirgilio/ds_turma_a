@@ -52,7 +52,7 @@ if((!isset($_SESSION['login']) == true)
                      class="dropbtn">Cadastrar</a>
                 <div class="dropdown-content">
                   <a href="#">Aluno</a>
-                  <a href="#">Professor</a>
+                  <a href="form_cadastra_professor.php">Professor</a>
                   <a href="#">Turma</a>
                 </div>
        </li>
